@@ -20,6 +20,26 @@ Ymmärsin asian niin, että controlled on parempi reaaliaikaisiin tehtäviin ja 
 
 Tehtävä 4
 
+https://vitejsvitejgj2cpwb-kqdj--5173--cf284e50.local-credentialless.webcontainer.io
+
+![alt text](image-2.png)
+
+Luin Reactin dokumentaatiosta useEffectin teoriaosuuden ja esimerkit. Sen jälkeen vielä kysyin Grokilta lisätietoja ja kertomaan yksinkertaisemmin asiasta.
+
+- useEffect hookia käytetään yleensä kun jotain halutaan tehdä renderöinnin jälkeen kuten hakea dataa netistä, tallentaa jotain selaimeen tai käynnistää ajastin. 
+
+- React 19 tekee joistakin useEffectin tapauksista automaattisia eli useEffectiä ei niissä tapauksissa tarvitse käyttää.
+
+- useEffect { ... } sisälle se mitä tehdään kun tila muuttuu, se voi olla console.log tai mitä vaan muuta. Sen jälkeen otetaan [riippuvuudet] sulkujen sisälle kaikki riippuvuudet, eli jos jotain muuttuu tässä kohtaa niin efekti suoritetaan uudelleen
+
+- kun komponentti poistuu suoritetaan siivous, eli jos esimerkiksi katkaistaan yhteys lisätään return, jonka sisällä suoritetaan yhteyden katkaisu:
+
+return () => {
+    socket.close();   
+  };
+
 Tehtävä 5
 
 Tehtävä 6
+
+Tehtävä 7
