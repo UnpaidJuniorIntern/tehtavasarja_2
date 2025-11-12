@@ -65,4 +65,26 @@ export function Driver( {name, team, points} )
 
 Tehtävä 6
 
+Kävin läpi kaikki teoriat W3Schools ja Reactin omilta sivuilta liittyen aiheeseen.
+
+Lähteet: 
+https://www.w3schools.com/react/react_props.asp
+https://react.dev/learn/passing-props-to-a-component
+
+https://vitejsvite9twqypye-u12a--5173--cf284e50.local-credentialless.webcontainer.io
+
+Parent-komponentti
+![alt text](image-6.png)
+Aluksi maalien määrä on 0
+Lisää maali tai vähennä nappia painamalla child-komponentin tila muuttuu
+
+
+Child-komponentti
+![alt text](image-7.png)
+Child-komponentti päivittyy aina kun parent-komponentin tila muuttuu nappeja painamalla ja silloin näemme console.log viestin
+
+Console.log viestit
+![alt text](image-8.png)
+Tässä näkyy console.log viestit kun painamme Parent-komponentin nappeja. 
+
 Tehtävä 7
