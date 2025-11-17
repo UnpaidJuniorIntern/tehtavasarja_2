@@ -88,3 +88,62 @@ Console.log viestit
 Tässä näkyy console.log viestit kun painamme Parent-komponentin nappeja. 
 
 Tehtävä 7
+
+Luin hookeista teoriaa ja sitten kysyin Grok-tekoälyltä voisiko se havainnollistaa vielä esimerkillä miten hookit toimivat. 
+Grok antoi jalkapallo-esimerkin ja siitä muokkasin itselleni hieman lämpötilaan liittyvän hookin.
+
+En saanut StackBlitzissä koodia näkymään ruudulla jostain syystä. 
+
+App.tsx
+
+import { useTemperatureCounter } from './useTemperatureCounter';
+
+export default function App() {
+  const { temperature, addDegree, removeDegree, reset } =
+    useTemperatureCounter(10);
+
+  return (
+    <div style={{ padding: '30px', fontFamily: 'Arial', textAlign: 'center' }}>
+      <h1>Lämpötila-hook</h1>
+
+      <h2>Lämpötila: {temperature}</h2>
+
+      <button onClick={addDegree} style={{ margin: '5px', padding: '10px' }}>
+        +1 aste
+      </button>
+
+      <button onClick={removeDegree} style={{ margin: '5px', padding: '10px' }}>
+        −1 aste
+      </button>
+
+      <button onClick={reset} style={{ margin: '5px', padding: '10px' }}>
+        Nollaa
+      </button>
+
+      {}
+      <p style={{ marginTop: '20px', fontSize: '18px' }}>
+        {temperature < 0`Nyt on talvi`}
+        {temperature > 0`Nyt on kesä`}
+      </p>
+    </div>
+  );
+}
+
+useTemperatureCount.tsx
+
+import { useState } from 'react';
+
+export function useTemperatureCounter(initialTemperature = 0) {
+  const [temperature, setTemperature] = useState(initialTemperature);
+
+  const addDegree = () => setTemperature(temperature + 1);
+  const removeDegree = () =>
+    setTemperature(temperature > 0 ? temperature - 1 : 0);
+
+  return {
+    temperature,
+    addDegree,
+    removeDegree,
+    reset: () => setTemperature(initialTemperature),
+  };
+}
